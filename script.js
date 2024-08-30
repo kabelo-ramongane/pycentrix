@@ -2,108 +2,120 @@
 const products = [
     {
         id: 1,
-        name: "Smartphone",
-        image: "/img/products/ergonomic-bagpack.jpg",
+        name: "Bag",
+        image: "assets/products/ergonomic-bagpack.jpg",
         description: "High-end smartphone with advanced features.",
         status: "In Stock",
+        category: "bags",
         price: 8999.99,
         rating: 4.5
     },
     {
         id: 2,
-        name: "Laptop",
-        image: "https://via.placeholder.com/150",
+        name: "Smart Watch",
+        image: "assets/products/galaxy-watch.webp",
         description: "Powerful laptop for work and entertainment.",
         status: "In Stock",
+        category: "watches",
         price: 14999.99,
         rating: 4.2
     },
     {
         id: 3,
-        name: "Headphones",
-        image: "https://via.placeholder.com/150",
+        name: "Laptop",
+        image: "assets/products/laptop.webp",
         description: "Wireless noise-cancelling headphones.",
         status: "Out of Stock",
+        category: "computers",
         price: 2499.99,
         rating: 4.7
     },
     {
-        id: 1,
-        name: "Smartphone",
-        image: "https://via.placeholder.com/150",
+        id: 4,
+        name: "Meta Quest",
+        image: "assets/products/metaquest.webp",
         description: "High-end smartphone with advanced features.",
         status: "In Stock",
+        category: "gadgets",
         price: 8999.99,
         rating: 4.5
     },
     {
-        id: 2,
-        name: "Laptop",
-        image: "https://via.placeholder.com/150",
+        id: 5,
+        name: "Samsung TV",
+        image: "assets/products/samsung.webp",
         description: "Powerful laptop for work and entertainment.",
         status: "In Stock",
+        category: "televisions",
         price: 14999.99,
         rating: 4.2
     },
     {
-        id: 3,
-        name: "Headphones",
-        image: "https://via.placeholder.com/150",
+        id: 6,
+        name: "Sony Alpha",
+        image: "assets/products/sony-alpha.webp",
         description: "Wireless noise-cancelling headphones.",
         status: "Out of Stock",
+        category: "cameras",
         price: 2499.99,
         rating: 4.7
     },
     {
-        id: 1,
-        name: "Smartphone",
-        image: "https://via.placeholder.com/150",
+        id: 7,
+        name: "Usb Gaming Mouse",
+        image: "assets/products/usb-gaming-mouse.jpg",
         description: "High-end smartphone with advanced features.",
         status: "In Stock",
+        category: "gadgets",
         price: 8999.99,
         rating: 4.5
     },
     {
-        id: 2,
+        id: 8,
         name: "Laptop",
-        image: "https://via.placeholder.com/150",
+        image: "assets/products/usb-gaming-mouse.jpg",
         description: "Powerful laptop for work and entertainment.",
         status: "In Stock",
+        category: "computers",
         price: 14999.99,
         rating: 4.2
     },
     {
-        id: 3,
+        id: 9,
         name: "Headphones",
-        image: "https://via.placeholder.com/150",
+        image: "assets/products/usb-gaming-mouse.jpg",
         description: "Wireless noise-cancelling headphones.",
         status: "Out of Stock",
+        category: "phones",
         price: 2499.99,
         rating: 4.7
     },{
-        id: 1,
+        id: 10,
         name: "Smartphone",
-        image: "https://via.placeholder.com/150",
+        image: "assets/products/usb-gaming-mouse.jpg",
         description: "High-end smartphone with advanced features.",
         status: "In Stock",
+        category: "phones",
         price: 8999.99,
         rating: 4.5
     },
     {
-        id: 2,
+        id: 11,
         name: "Laptop",
-        image: "https://via.placeholder.com/150",
+        image: "assets/products/usb-gaming-mouse.jpg",
         description: "Powerful laptop for work and entertainment.",
         status: "In Stock",
+        category: "bags",
         price: 14999.99,
         rating: 4.2
     },
     {
-        id: 3,
+        id: 12,
         name: "Headphones",
-        image: "https://via.placeholder.com/150",
+        image: "assets/products/usb-gaming-mouse.jpg",
         description: "Wireless noise-cancelling headphones.",
         status: "Out of Stock",
+        category: "bags",
         price: 2499.99,
         rating: 4.7
     }    
@@ -254,7 +266,7 @@ function filterProducts() {
     const filterBy = filterSelect.value;
 
     const filteredProducts = filterBy
-        ? products.filter(product => product.status === filterBy)
+        ? products.filter(product => product.category === filterBy)
         : products;
 
     displayProducts(filteredProducts);
