@@ -1,0 +1,116 @@
+.cart-icon {
+    position: relative;
+}
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #412E27;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+.card-img-top {
+    max-width: 300px;
+    max-height: 160px;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    margin: 1rem auto;
+}
+
+.logo-inline{
+    height: 80px;
+    width: 80px;
+    scale: 1.5;
+}
+
+.bg-light{
+    background-color: #dad7d2 !important;
+}
+
+/* Custom override for .btn-primary */
+.btn-primary {
+    background-color: #412E27 !important; /* Default background color */
+    border-color: #412E27 !important;     /* Default border color */
+}
+
+.btn-primary:hover {
+    background-color: #dad7d2 !important; /* Hover background color */
+    border-color: #dad7d2 !important;     /* Hover border color */
+}
+
+.btn-outline-primary{
+    border-color: #412E27 !important; 
+    color:  #412E27 !important;
+}
+
+.btn-outline-primary:hover{
+    background-color: #412E27 !important; /* Default background color */
+    border-color: #412E27 !important;     /* Default border color */
+    color: white !important; 
+}
+
+
+.item-details {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Adjust spacing as needed */
+}
+
+.item-image {
+    max-width: 80px;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    margin: 1rem auto;
+    margin-right: 10px; /* Space between image and text */
+}
+
+.item-info {
+    flex-grow: 1;
+}
+
+.item-name {
+    margin: 0;
+    font-size: 16px;
+}
+
+.item-price, .item-quantity {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.item-actions {
+    display: flex;
+    gap: 5px; /* Space between buttons */
+}
+
+.cart-icon i {
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.cart-icon i:hover {
+    color: white; /* Optional: Change color on hover for better visual feedback */
+}
+
+/* Make the links bold and change color on hover */
+.navbar-nav .nav-link {
+    font-weight: bold; /* Make the text bold */
+    color:#412E27; /* Default color (black in this case) */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.navbar-nav .nav-link:hover {
+    color: white; /* Change color on hover (Bootstrap primary color) */
+    text-decoration: underline; /* Optional: Add underline on hover for better visual feedback */
+}
+
+
+
+
+

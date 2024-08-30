@@ -1,5 +1,0 @@
-background: #EDFFDE
-container: #BCEC7E
-primary: #6A704C
-secondary: #6A704C
-accent: #412E27

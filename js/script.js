@@ -2,9 +2,9 @@
 const products = [
     {
         id: 1,
-        name: "Bag",
+        name: "Noel Bag",
         image: "assets/products/ergonomic-bagpack.jpg",
-        description: "High-end smartphone with advanced features.",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
         status: "In Stock",
         category: "bags",
         price: 8999.99,
@@ -12,11 +12,11 @@ const products = [
     },
     {
         id: 2,
-        name: "Smart Watch",
-        image: "assets/products/galaxy-watch.webp",
-        description: "Powerful laptop for work and entertainment.",
+        name: "Everki Laptop Bag",
+        image: "assets/products/everki.webp",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
         status: "In Stock",
-        category: "watches",
+        category: "bags",
         price: 14999.99,
         rating: 4.2
     },
@@ -24,7 +24,7 @@ const products = [
         id: 3,
         name: "Laptop",
         image: "assets/products/laptop.webp",
-        description: "Wireless noise-cancelling headphones.",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
         status: "Out of Stock",
         category: "computers",
         price: 2499.99,
@@ -34,7 +34,7 @@ const products = [
         id: 4,
         name: "Meta Quest",
         image: "assets/products/metaquest.webp",
-        description: "High-end smartphone with advanced features.",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
         status: "In Stock",
         category: "gadgets",
         price: 8999.99,
@@ -44,7 +44,7 @@ const products = [
         id: 5,
         name: "Samsung TV",
         image: "assets/products/samsung.webp",
-        description: "Powerful laptop for work and entertainment.",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
         status: "In Stock",
         category: "televisions",
         price: 14999.99,
@@ -54,7 +54,7 @@ const products = [
         id: 6,
         name: "Sony Alpha",
         image: "assets/products/sony-alpha.webp",
-        description: "Wireless noise-cancelling headphones.",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
         status: "Out of Stock",
         category: "cameras",
         price: 2499.99,
@@ -64,7 +64,7 @@ const products = [
         id: 7,
         name: "Usb Gaming Mouse",
         image: "assets/products/usb-gaming-mouse.jpg",
-        description: "High-end smartphone with advanced features.",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
         status: "In Stock",
         category: "gadgets",
         price: 8999.99,
@@ -72,28 +72,28 @@ const products = [
     },
     {
         id: 8,
-        name: "Laptop",
-        image: "assets/products/usb-gaming-mouse.jpg",
-        description: "Powerful laptop for work and entertainment.",
+        name: "Oculus VR Headset",
+        image: "assets/products/oculus.jpg",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
         status: "In Stock",
-        category: "computers",
+        category: "gadgets",
         price: 14999.99,
         rating: 4.2
     },
     {
         id: 9,
-        name: "Headphones",
-        image: "assets/products/usb-gaming-mouse.jpg",
-        description: "Wireless noise-cancelling headphones.",
+        name: "Beats Headphones",
+        image: "assets/products/beats.webp",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
         status: "Out of Stock",
-        category: "phones",
+        category: "gadgets",
         price: 2499.99,
         rating: 4.7
     },{
         id: 10,
-        name: "Smartphone",
-        image: "assets/products/usb-gaming-mouse.jpg",
-        description: "High-end smartphone with advanced features.",
+        name: " Oppo Smartphone",
+        image: "assets/products/oppo.jpg",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
         status: "In Stock",
         category: "phones",
         price: 8999.99,
@@ -101,24 +101,34 @@ const products = [
     },
     {
         id: 11,
-        name: "Laptop",
-        image: "assets/products/usb-gaming-mouse.jpg",
-        description: "Powerful laptop for work and entertainment.",
+        name: "Motorolla Razr",
+        image: "assets/products/motorolla.jpg",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
         status: "In Stock",
-        category: "bags",
+        category: "phones",
         price: 14999.99,
         rating: 4.2
     },
     {
         id: 12,
-        name: "Headphones",
-        image: "assets/products/usb-gaming-mouse.jpg",
-        description: "Wireless noise-cancelling headphones.",
+        name: "Hisense television",
+        image: "assets/products/hisense.jpg",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
         status: "Out of Stock",
-        category: "bags",
+        category: "televisions",
         price: 2499.99,
         rating: 4.7
-    }    
+    },
+    {
+        id: 13,
+        name: "Galaxy Watch",
+        image: "assets/products/galaxy-watch.webp",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+        status: "Out of Stock",
+        category: "watches",
+        price: 2499.99,
+        rating: 4.7
+    }      
 ];
 
 const PRODUCTS_PER_PAGE = 6;
@@ -186,10 +196,21 @@ function updateCartDisplay() {
         const itemElement = document.createElement('div');
         itemElement.className = 'mb-2';
         itemElement.innerHTML = `
-            <div>${item.name} - R${item.price.toFixed(2)} x ${item.quantity}</div>
-            <button class="btn btn-sm btn-danger remove-item" data-id="${item.id}">Remove</button>
-            <button class="btn btn-sm btn-secondary increase-quantity" data-id="${item.id}">+</button>
-        `;
+    <div class="item-details">
+        <img src="${item.image}" alt="${item.name}" class="item-image" />
+        <div class="item-info">
+            <h5 class="item-name">${item.name}</h5>
+           <p class="item-price">Price: <span class="item-value">R${item.price.toFixed(2)}</span></p>
+            <p class="item-quantity">Quantity: <span class="item-value">${item.quantity}</span></p>
+        </div>
+        <div class="item-actions">
+            <i class="bi bi-trash btn btn-sm btn-danger remove-item" data-id="${item.id}" aria-hidden="true"></i>
+            <i class="bi bi-plus btn btn-sm btn-secondary increase-quantity" data-id="${item.id}" aria-hidden="true"></i>
+
+        </div>
+    </div>
+`;
+
         cartItems.appendChild(itemElement);
 
         total += item.price * item.quantity;
@@ -348,10 +369,20 @@ function setupPagination(totalProducts, productsPerPage) {
     }
 }
 
-// Initialize the page
+//helper function to format numbers
+function formatNumber(number, locale = 'en-UK', options = {}) {
+    // Create a NumberFormat instance with the provided locale and options
+    const formatter = new Intl.NumberFormat(locale, options);
+    
+    // Format the number and return it
+    return formatter.format(number);
+}
+
 //displayProducts(products);
 //initializeEventListeners();
 
+
+// Initialize the page
 setupPagination(products.length, PRODUCTS_PER_PAGE);
 displayProducts(products.slice(0, PRODUCTS_PER_PAGE));
 initializeEventListeners();
