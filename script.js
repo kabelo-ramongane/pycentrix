@@ -3,6 +3,33 @@ const products = [
     {
         id: 1,
         name: "Smartphone",
+        image: "/img/products/ergonomic-bagpack.jpg",
+        description: "High-end smartphone with advanced features.",
+        status: "In Stock",
+        price: 8999.99,
+        rating: 4.5
+    },
+    {
+        id: 2,
+        name: "Laptop",
+        image: "https://via.placeholder.com/150",
+        description: "Powerful laptop for work and entertainment.",
+        status: "In Stock",
+        price: 14999.99,
+        rating: 4.2
+    },
+    {
+        id: 3,
+        name: "Headphones",
+        image: "https://via.placeholder.com/150",
+        description: "Wireless noise-cancelling headphones.",
+        status: "Out of Stock",
+        price: 2499.99,
+        rating: 4.7
+    },
+    {
+        id: 1,
+        name: "Smartphone",
         image: "https://via.placeholder.com/150",
         description: "High-end smartphone with advanced features.",
         status: "In Stock",
@@ -27,7 +54,59 @@ const products = [
         price: 2499.99,
         rating: 4.7
     },
-    // Add more products as needed
+    {
+        id: 1,
+        name: "Smartphone",
+        image: "https://via.placeholder.com/150",
+        description: "High-end smartphone with advanced features.",
+        status: "In Stock",
+        price: 8999.99,
+        rating: 4.5
+    },
+    {
+        id: 2,
+        name: "Laptop",
+        image: "https://via.placeholder.com/150",
+        description: "Powerful laptop for work and entertainment.",
+        status: "In Stock",
+        price: 14999.99,
+        rating: 4.2
+    },
+    {
+        id: 3,
+        name: "Headphones",
+        image: "https://via.placeholder.com/150",
+        description: "Wireless noise-cancelling headphones.",
+        status: "Out of Stock",
+        price: 2499.99,
+        rating: 4.7
+    },{
+        id: 1,
+        name: "Smartphone",
+        image: "https://via.placeholder.com/150",
+        description: "High-end smartphone with advanced features.",
+        status: "In Stock",
+        price: 8999.99,
+        rating: 4.5
+    },
+    {
+        id: 2,
+        name: "Laptop",
+        image: "https://via.placeholder.com/150",
+        description: "Powerful laptop for work and entertainment.",
+        status: "In Stock",
+        price: 14999.99,
+        rating: 4.2
+    },
+    {
+        id: 3,
+        name: "Headphones",
+        image: "https://via.placeholder.com/150",
+        description: "Wireless noise-cancelling headphones.",
+        status: "Out of Stock",
+        price: 2499.99,
+        rating: 4.7
+    }    
 ];
 
 let cart = [];
