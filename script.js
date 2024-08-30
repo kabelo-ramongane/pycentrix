@@ -121,6 +121,8 @@ const products = [
     }    
 ];
 
+const PRODUCTS_PER_PAGE = 6;
+
 let cart = [];
 
 function displayProducts(productsToShow) {
@@ -231,7 +233,7 @@ function increaseQuantity(productId) {
     }
 }
 
-function searchProducts() {
+/*function searchProducts() {
     const searchInput = document.getElementById('searchInput');
     const searchTerm = searchInput.value.toLowerCase();
 
@@ -270,8 +272,51 @@ function filterProducts() {
         : products;
 
     displayProducts(filteredProducts);
+}*/
+
+function searchProducts() {
+    const searchInput = document.getElementById('searchInput');
+    const searchTerm = searchInput.value.toLowerCase();
+
+    const filteredProducts = products.filter(product =>
+        product.name.toLowerCase().includes(searchTerm) ||
+        product.description.toLowerCase().includes(searchTerm)
+    );
+
+    setupPagination(filteredProducts.length, PRODUCTS_PER_PAGE);
+    displayProducts(filteredProducts.slice(0, PRODUCTS_PER_PAGE));
 }
 
+function sortProducts() {
+    const sortSelect = document.getElementById('sortSelect');
+    const sortBy = sortSelect.value;
+
+    const sortedProducts = [...products].sort((a, b) => {
+        if (sortBy === 'name') {
+            return a.name.localeCompare(b.name);
+        } else if (sortBy === 'price') {
+            return a.price - b.price;
+        } else if (sortBy === 'rating') {
+            return b.rating - a.rating;
+        }
+        return 0;
+    });
+
+    setupPagination(sortedProducts.length, PRODUCTS_PER_PAGE);
+    displayProducts(sortedProducts.slice(0, PRODUCTS_PER_PAGE));
+}
+
+function filterProducts() {
+    const filterSelect = document.getElementById('filterSelect');
+    const filterBy = filterSelect.value;
+
+    const filteredProducts = filterBy
+        ? products.filter(product => product.category === filterBy)
+        : products;
+
+    setupPagination(filteredProducts.length, PRODUCTS_PER_PAGE);
+    displayProducts(filteredProducts.slice(0, PRODUCTS_PER_PAGE));
+}
 function initializeEventListeners() {
     const searchInput = document.getElementById('searchInput');
     const sortSelect = document.getElementById('sortSelect');
@@ -284,6 +329,29 @@ function initializeEventListeners() {
     checkoutBtn.addEventListener('click', () => alert('Checkout functionality not implemented'));
 }
 
+//PAGINATION
+function setupPagination(totalProducts, productsPerPage) {
+    const pageCount = Math.ceil(totalProducts / productsPerPage);
+    const paginationContainer = document.getElementById('pagination');
+    paginationContainer.innerHTML = '';
+
+    for (let i = 1; i <= pageCount; i++) {
+        const button = document.createElement('button');
+        button.innerText = i;
+        button.classList.add('btn', 'btn-outline-primary', 'mx-1');
+        button.addEventListener('click', () => {
+            const start = (i - 1) * productsPerPage;
+            const end = start + productsPerPage;
+            displayProducts(products.slice(start, end));
+        });
+        paginationContainer.appendChild(button);
+    }
+}
+
 // Initialize the page
-displayProducts(products);
+//displayProducts(products);
+//initializeEventListeners();
+
+setupPagination(products.length, PRODUCTS_PER_PAGE);
+displayProducts(products.slice(0, PRODUCTS_PER_PAGE));
 initializeEventListeners();
