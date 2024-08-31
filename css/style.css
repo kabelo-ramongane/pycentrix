@@ -110,6 +110,42 @@
     text-decoration: underline; /* Optional: Add underline on hover for better visual feedback */
 }
 
+/* Star Rating Styles */
+.star-rating {
+    font-size: 1.5rem; /* Adjust the size of the stars */
+    color: #ccc; /* Default color for empty stars */
+    display: inline-block;
+}
+
+.star-rating .star {
+    color: #f39c12; /* Color for filled stars */
+    cursor: default; /* Change cursor to default since these are not clickable */
+}
+
+.star-rating .star {
+    display: inline-block;
+    width: 1.5rem;
+}
+
+.star-rating[data-rating="1"] .star:nth-child(n+2) {
+    color: #ccc;
+}
+
+.star-rating[data-rating="2"] .star:nth-child(n+3) {
+    color: #ccc;
+}
+
+.star-rating[data-rating="3"] .star:nth-child(n+4) {
+    color: #ccc;
+}
+
+.star-rating[data-rating="4"] .star:nth-child(n+5) {
+    color: #ccc;
+}
+
+.star-rating[data-rating="5"] .star:nth-child(n+6) {
+    color: #ccc;
+}
 
 
 

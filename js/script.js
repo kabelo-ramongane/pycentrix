@@ -48,7 +48,7 @@ const products = [
         status: "In Stock",
         category: "televisions",
         price: 14999.99,
-        rating: 4.2
+        rating: 1
     },
     {
         id: 6,
@@ -58,7 +58,7 @@ const products = [
         status: "Out of Stock",
         category: "cameras",
         price: 2499.99,
-        rating: 4.7
+        rating: 2
     },
     {
         id: 7,
@@ -97,7 +97,7 @@ const products = [
         status: "In Stock",
         category: "phones",
         price: 8999.99,
-        rating: 4.5
+        rating: 2
     },
     {
         id: 11,
@@ -107,7 +107,7 @@ const products = [
         status: "In Stock",
         category: "phones",
         price: 14999.99,
-        rating: 4.2
+        rating: 3
     },
     {
         id: 12,
@@ -117,7 +117,7 @@ const products = [
         status: "Out of Stock",
         category: "televisions",
         price: 2499.99,
-        rating: 4.7
+        rating: 1
     },
     {
         id: 13,
@@ -150,8 +150,17 @@ function displayProducts(productsToShow) {
                     <p class="card-text">${product.description}</p>
                     <p class="card-text"><small class="text-muted">${product.status}</small></p>
                     <p class="card-text">R${product.price.toFixed(2)}</p>
-                    <p class="card-text">Rating: ${product.rating}/5</p>
+                    <div class="star-rating mt-0" data-rating=${product.rating}>
+                    <!-- 5 stars for rating -->
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                </div>
+                <div class="mt-2">
                     <button class="btn btn-primary add-to-cart" data-id="${product.id}">Add to Cart</button>
+                </div>                    
                 </div>
             </div>
         `;
